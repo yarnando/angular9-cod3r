@@ -17,16 +17,7 @@ export class ProductReadComponent implements OnInit {
   ngOnInit(): void {
     this.productService.read().subscribe(products => {
       this.products = products
-      console.log(products)
     })
-  }
-
-  deleteProduct(product: Product): void {
-    let productId = `${product.id}`
-    this.productService.delete(productId).subscribe(() => {
-      this.products = this.products.filter( productItem => productItem != product )
-      this.productService.showMessage(`Produto ${product.name} deletado!`)
-    })
-  }  
+  } 
 
 }

@@ -6,10 +6,6 @@ table {
     margin-right: 10px;
 }
 
-.delete {
-    cursor: pointer;
-}
-
 .edit > i {
     color: #d9cd26;
 }
