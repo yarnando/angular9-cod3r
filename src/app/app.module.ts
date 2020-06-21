@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 //Angular Modules
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +32,14 @@ import { ProductCreateComponent } from './components/product/product-create/prod
 import { RedDirective } from './directives/red.directive';
 import { ForDirective } from './directives/for.directive';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+
+// COLOCAR MOEDAS(E OUTRAS COISAS) NO FORMATO BRASILEIRO
+import localePt from '@angular/common/locales/pt'
+import { registerLocaleData } from '@angular/common'
+registerLocaleData(localePt)
 
 @NgModule({
   declarations: [
@@ -44,7 +52,7 @@ import { ProductReadComponent } from './components/product/product-read/product-
     HomeComponent,
     ProductCrudComponent,
     ProductCreateComponent,
-    ProductReadComponent
+    ProductReadComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,8 +68,14 @@ import { ProductReadComponent } from './components/product/product-read/product-
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
