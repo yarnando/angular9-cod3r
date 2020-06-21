@@ -21,4 +21,12 @@ export class ProductReadComponent implements OnInit {
     })
   }
 
+  deleteProduct(product: Product): void {
+    let productId = `${product.id}`
+    this.productService.delete(productId).subscribe(() => {
+      this.products = this.products.filter( productItem => productItem != product )
+      this.productService.showMessage(`Produto ${product.name} deletado!`)
+    })
+  }  
+
 }
