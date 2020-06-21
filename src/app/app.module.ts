@@ -31,18 +31,20 @@ import { ProductCreateComponent } from './components/product/product-create/prod
 //Directives
 import { RedDirective } from './directives/red.directive';
 import { ForDirective } from './directives/for.directive';
+import { ProductReadComponent } from './components/product/product-read/product-read.component';
 
 @NgModule({
   declarations: [
+    RedDirective,
+    ForDirective,    
     AppComponent,
     HeaderComponent,
     FooterComponent,
     NavComponent,
     HomeComponent,
     ProductCrudComponent,
-    RedDirective,
-    ForDirective,
-    ProductCreateComponent
+    ProductCreateComponent,
+    ProductReadComponent
   ],
   imports: [
     BrowserModule,
